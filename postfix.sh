@@ -62,8 +62,12 @@ sudo postconf -e "postscreen_upstream_proxy_protocol = haproxy"
 sudo postconf -e "postscreen_upstream_proxy_timeout = 5s"
  
 cat <<EOF
-### Add this to master.cf and dont forget to add users!
- 
+#################################
+### 1. Add this to master.cf  ###
+### 2. Add users              ###
+### 3. Restart Postfix        ###
+#################################
+
 smtp      inet  n       -       n       -       -       smtpd
   -o smtpd_sasl_auth_enable=yes
   -o smtpd_upstream_proxy_protocol=haproxy
