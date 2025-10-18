@@ -6,7 +6,7 @@ echo "Installiere Postfix"
 sudo DEBIAN_FRONTEND=noninteractive apt install -y postfix > /dev/null 2>&1
 
 echo "Setze Postfix auf Autostart"
-sudo systemctl enable postfix
+sudo systemctl enable postfix > /dev/null 2>&1
 
 echo "Installiere LibSASL"
 sudo apt install -y libsasl2-modules sasl2-bin > /dev/null 2>&1
@@ -17,7 +17,7 @@ sudo sed -i 's/^START=.*/START=yes/' /etc/default/saslauthd
 sudo sed -i 's/^MECHANISMS=.*/MECHANISMS="pam"/' /etc/default/saslauthd
 
 echo "Setze saslauthd auf Autostart"
-sudo systemctl enable --now saslauthd
+sudo systemctl enable --now saslauthd > /dev/null 2>&1
 # sudo systemctl status saslauthd
 
 echo "Fuege postfix User zu Gruppe sasl hinzu"
