@@ -1,4 +1,5 @@
-echo "Setze Installer-Variablen"
+echo -e "\e[32mSetze Installer Variablen\e[0m"
+
 echo "postfix postfix/main_mailer_type string Internet Site" | sudo debconf-set-selections
 echo "postfix postfix/mailname string $(hostname -f)" | sudo debconf-set-selections
 
